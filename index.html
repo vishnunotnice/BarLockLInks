@@ -34,11 +34,12 @@
       .button:hover::before, .button:focus-visible::before { transform:scaleY(1); }
       .number { align-self:stretch; display:grid; place-items:center; border-right:1px solid rgba(255,255,255,.08); color:var(--crimson); font-size:.68rem; font-weight:800; letter-spacing:.08em; }
       .button-text { padding-left:1rem; font-size:clamp(.94rem, 3.2vw, 1.08rem); font-weight:800; letter-spacing:.015em; }
-      .arrow { display:grid; place-items:center; justify-self:end; width:1.85rem; height:1.85rem; border:1px solid rgba(216,47,57,.5); color:var(--crimson); font-size:1rem; transition:background .23s ease, color .23s ease, transform .23s ease; }
+      .arrow { display:grid; place-items:center; justify-self:end; width:1.85rem; height:1.85rem; border:1px solid rgba(216,47,57,.5); color:var(--crimson); transition:background .23s ease, color .23s ease, transform .23s ease; }
+      .arrow svg { width:1rem; height:1rem; fill:none; stroke:currentColor; stroke-linecap:square; stroke-linejoin:miter; stroke-width:2; }
       .button:hover .arrow, .button:focus-visible .arrow { background:var(--crimson); color:var(--cream); transform:translate(2px,-2px); }
       footer { display:flex; justify-content:space-between; gap:1rem; margin-top:2rem; padding-top:1rem; border-top:1px solid #292929; color:#77746e; font-size:.66rem; font-weight:700; letter-spacing:.1em; line-height:1.5; text-transform:uppercase; animation:enter .55s .22s cubic-bezier(.16,1,.3,1) both; }
       @keyframes enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-      @media (max-width:430px) { .shell { width:min(100% - 1.35rem, 700px); padding-top:.9rem; } .masthead { padding:1rem; } .eyebrow { font-size:.55rem; } .eyebrow span:last-child { display:none; } .identity { gap:.75rem; } .brand { width:3.65rem; height:3.65rem; } .intro { font-size:.81rem; } .button { min-height:4.1rem; } footer { flex-direction:column; gap:.2rem; } }
+      @media (max-width:430px) { .shell { width:min(100% - 1.35rem, 700px); padding-top:.9rem; } .masthead { padding:1rem; } .eyebrow { font-size:.55rem; } .eyebrow span:last-child { display:none; } .identity { gap:.75rem; } .brand { width:3.65rem; height:3.65rem; } .intro { margin-top:1rem; font-size:.81rem; } .button { min-height:4.1rem; box-shadow:4px 4px 0 rgba(135,35,43,.62); } .button-text { padding-left:.8rem; } footer { flex-direction:column; gap:.2rem; } }
       @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
     </style>
   </head>
@@ -55,11 +56,11 @@
       <section class="destinations" aria-labelledby="access-label">
         <p id="access-label" class="section-label"><span>Choose your destination</span><b>05 Access Points</b></p>
         <nav aria-label="BarLock destinations">
-          <a class="button" href="https://coach.barlock.fitness"><span class="number">01</span><span class="button-text">BarLock for Coach</span><span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="button" href="https://client.barlock.fitness"><span class="number">02</span><span class="button-text">BarLock for Client</span><span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="button" href="https://survey.barlock.fitness"><span class="number">03</span><span class="button-text">Survey for BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="button" href="https://feedback.barlock.fitness"><span class="number">04</span><span class="button-text">Feedback for BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="button" href="https://www.barlock.fitness/aboutus"><span class="number">05</span><span class="button-text">About BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button" href="https://coach.barlock.fitness"><span class="number">01</span><span class="button-text">BarLock for Coach</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" /></svg></span></a>
+          <a class="button" href="https://client.barlock.fitness"><span class="number">02</span><span class="button-text">BarLock for Client</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" /></svg></span></a>
+          <a class="button" href="https://survey.barlock.fitness"><span class="number">03</span><span class="button-text">Survey for BarLock</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" /></svg></span></a>
+          <a class="button" href="https://feedback.barlock.fitness"><span class="number">04</span><span class="button-text">Feedback for BarLock</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" /></svg></span></a>
+          <a class="button" href="https://www.barlock.fitness/aboutus"><span class="number">05</span><span class="button-text">About BarLock</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" /></svg></span></a>
         </nav>
       </section>
       <footer><span>© 2026 BarLock</span><span>Own the Weight.</span></footer>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070707" />
+    <meta name="description" content="BarLock — Own the Weight." />
+    <title>BarLock — Own the Weight.</title>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
+    <style>
+      :root { color-scheme: dark; --ink:#070707; --panel:#151515; --panel-hover:#1d1b1b; --line:#3e3e3e; --cream:#f3f1ec; --soft:#aca9a3; --crimson:#d82f39; --red-shadow:#87232b; }
+      * { box-sizing:border-box; }
+      html { background:var(--ink); }
+      body { min-width:320px; min-height:100svh; margin:0; overflow-x:hidden; color:var(--cream); background:radial-gradient(ellipse 70% 36% at 52% -5%, rgba(216,47,57,.22), transparent 67%), var(--ink); font-family:Arial, Helvetica, sans-serif; }
+      body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.25; background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size:34px 34px; mask-image:linear-gradient(to bottom, black, transparent 68%); }
+      .shell { width:min(100% - 2rem, 700px); margin-inline:auto; padding:clamp(1.2rem, 5vw, 3.3rem) 0 2rem; }
+      .panel { position:relative; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,255,255,.025), transparent 28%), var(--panel); box-shadow:9px 9px 0 var(--red-shadow), 0 1.25rem 4rem rgba(0,0,0,.36); }
+      .masthead { padding:clamp(1.2rem, 4.5vw, 2.3rem); animation:enter .55s cubic-bezier(.16,1,.3,1) both; }
+      .eyebrow { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.1rem; color:var(--crimson); font-size:.66rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+      .eyebrow span:last-child { color:var(--soft); white-space:nowrap; }
+      .identity { display:flex; align-items:center; gap:1rem; }
+      .brand { flex:0 0 auto; display:grid; place-items:center; width:4.35rem; height:4.35rem; padding:.45rem; border:1px solid #4c4b49; background:#0c0c0c; }
+      .brand img { display:block; width:100%; height:100%; object-fit:contain; }
+      h1 { margin:0; color:var(--cream); font-family:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size:clamp(2.55rem, 10vw, 4.1rem); font-weight:400; line-height:.83; letter-spacing:.025em; text-transform:uppercase; }
+      .tagline { margin:.55rem 0 0; color:var(--soft); font-size:clamp(.83rem, 2vw, .98rem); line-height:1.35; }
+      .intro { margin:1.2rem 0 0; max-width:34rem; padding-top:1.1rem; border-top:1px solid rgba(216,47,57,.72); color:#d0cdc6; font-size:.9rem; line-height:1.55; }
+      .destinations { margin-top:1.65rem; animation:enter .55s .12s cubic-bezier(.16,1,.3,1) both; }
+      .section-label { display:flex; align-items:center; justify-content:space-between; margin:0 0 .7rem; color:var(--soft); font-size:.64rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+      .section-label b { color:var(--crimson); font-weight:800; }
+      nav { display:grid; gap:.72rem; }
+      .button { position:relative; display:grid; grid-template-columns:2.6rem minmax(0,1fr) 2rem; align-items:center; min-height:4.45rem; padding:0 1rem 0 0; overflow:hidden; border:1px solid var(--line); background:var(--panel); color:var(--cream); text-decoration:none; box-shadow:6px 6px 0 rgba(135,35,43,.62); transition:transform .23s cubic-bezier(.2,.8,.2,1), border-color .23s ease, background .23s ease, box-shadow .23s ease; }
+      .button::before { content:""; position:absolute; inset:0 auto 0 0; width:3px; background:var(--crimson); transform:scaleY(.35); transform-origin:center; transition:transform .23s ease; }
+      .button:hover, .button:focus-visible { transform:translate(-3px, -3px); border-color:var(--crimson); background:var(--panel-hover); box-shadow:9px 9px 0 var(--red-shadow); outline:none; }
+      .button:hover::before, .button:focus-visible::before { transform:scaleY(1); }
+      .number { align-self:stretch; display:grid; place-items:center; border-right:1px solid rgba(255,255,255,.08); color:var(--crimson); font-size:.68rem; font-weight:800; letter-spacing:.08em; }
+      .button-text { padding-left:1rem; font-size:clamp(.94rem, 3.2vw, 1.08rem); font-weight:800; letter-spacing:.015em; }
+      .arrow { display:grid; place-items:center; justify-self:end; width:1.85rem; height:1.85rem; border:1px solid rgba(216,47,57,.5); color:var(--crimson); font-size:1rem; transition:background .23s ease, color .23s ease, transform .23s ease; }
+      .button:hover .arrow, .button:focus-visible .arrow { background:var(--crimson); color:var(--cream); transform:translate(2px,-2px); }
+      footer { display:flex; justify-content:space-between; gap:1rem; margin-top:2rem; padding-top:1rem; border-top:1px solid #292929; color:#77746e; font-size:.66rem; font-weight:700; letter-spacing:.1em; line-height:1.5; text-transform:uppercase; animation:enter .55s .22s cubic-bezier(.16,1,.3,1) both; }
+      @keyframes enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+      @media (max-width:430px) { .shell { width:min(100% - 1.35rem, 700px); padding-top:.9rem; } .masthead { padding:1rem; } .eyebrow { font-size:.55rem; } .eyebrow span:last-child { display:none; } .identity { gap:.75rem; } .brand { width:3.65rem; height:3.65rem; } .intro { font-size:.81rem; } .button { min-height:4.1rem; } footer { flex-direction:column; gap:.2rem; } }
+      @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead panel">
+        <div class="eyebrow"><span>BarLock // Member Access</span><span>Platform Gateway</span></div>
+        <div class="identity">
+          <div class="brand"><img src="https://raw.githubusercontent.com/vishnunotnice/Portfolio/main/barlock-logo.png" alt="BarLock logo" /></div>
+          <div><h1>BarLock</h1><p class="tagline">Own the Weight.</p></div>
+        </div>
+        <p class="intro">Everything you need to train with purpose — from coaching and your client workspace to surveys, feedback, and the BarLock story.</p>
+      </header>
+      <section class="destinations" aria-labelledby="access-label">
+        <p id="access-label" class="section-label"><span>Choose your destination</span><b>05 Access Points</b></p>
+        <nav aria-label="BarLock destinations">
+          <a class="button" href="https://coach.barlock.fitness"><span class="number">01</span><span class="button-text">BarLock for Coach</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button" href="https://client.barlock.fitness"><span class="number">02</span><span class="button-text">BarLock for Client</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button" href="https://survey.barlock.fitness"><span class="number">03</span><span class="button-text">Survey for BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button" href="https://feedback.barlock.fitness"><span class="number">04</span><span class="button-text">Feedback for BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button" href="https://www.barlock.fitness/aboutus"><span class="number">05</span><span class="button-text">About BarLock</span><span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+      <footer><span>© 2026 BarLock</span><span>Own the Weight.</span></footer>
+    </main>
+  </body>
+</html>
